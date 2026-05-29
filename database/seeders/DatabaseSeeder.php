@@ -11,11 +11,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $users = User::all();
-        
-        foreach ($users as $user) {
-            $user->password = Hash::make($user->password); // hash password yang sudah ada
-            $user->save();
-        }
+        User::updateOrCreate(
+            ['email' => 'admin@bicopi.com'],
+            [
+                'name'     => 'Admin Bicopi',
+                'password' => Hash::make('Bicopi26.'),
+            ]
+        );
     }
 }
