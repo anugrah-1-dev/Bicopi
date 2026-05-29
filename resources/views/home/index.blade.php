@@ -286,7 +286,7 @@
                 <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
                     <script type="application/json" class="swiper-config">
             {
-              "loop": true,
+              "loop": {{ $promosi->count() > 1 ? 'true' : 'false' }},
               "speed": 600,
               "autoplay": {
                 "delay": 5000
