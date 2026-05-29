@@ -42,7 +42,7 @@
                         <img src="/image/{{ $menu->foto_menu }}" alt="" class="img-fluid" width="90">
                     </td>
                     <td>
-                        <a href="{{ route('menu.edit', $menu->id_menu) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('menu.edit', $menu->id_menu) }}" class="btn btn-warning">Ubah</a>
                         <form action="{{ route('menu.destroy', $menu->id_menu) }}" method="POST">
                         @csrf    
                         @method('DELETE')

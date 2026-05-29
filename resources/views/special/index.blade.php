@@ -38,7 +38,7 @@
                         <img src="/image/{{ $special->image }}" alt="" class="img-fluid" width="90">
                     </td>
                     <td>
-                        <a href="{{ route('specials.edit', $special->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('specials.edit', $special->id) }}" class="btn btn-warning">Ubah</a>
                         <form action="{{ route('specials.destroy', $special->id) }}" method="POST">
                         @csrf    
                         @method('DELETE')

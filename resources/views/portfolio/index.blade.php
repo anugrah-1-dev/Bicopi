@@ -38,7 +38,7 @@
                         <img src="/image/{{ $portfolio->image }}" alt="" class="img-fluid" width="90">
                     </td>
                     <td>
-                        <a href="{{ route('portfolios.edit', $portfolio->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('portfolios.edit', $portfolio->id) }}" class="btn btn-warning">Ubah</a>
                         <form action="{{ route('portfolios.destroy', $portfolio->id) }}" method="POST">
                         @csrf    
                         @method('DELETE')

@@ -38,7 +38,7 @@
                         <img src="/image/{{ $slider->image }}" alt="" class="img-fluid" width="90">
                     </td>
                     <td>
-                        <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-warning">Ubah</a>
                         <form action="{{ route('sliders.destroy', $slider->id) }}" method="POST">
                         @csrf    
                         @method('DELETE')

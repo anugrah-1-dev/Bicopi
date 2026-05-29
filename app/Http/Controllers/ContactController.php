@@ -64,6 +64,7 @@ class ContactController extends Controller
             'alamat' => 'required',
             'email' => 'required|email',
             'telepon' => 'required',
+            'telepon_2' => 'required',
             'jam_buka' => 'required',
             'maps_embed' => 'required',
             'twitter' => 'required',

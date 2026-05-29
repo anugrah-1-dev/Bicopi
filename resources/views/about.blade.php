@@ -13,7 +13,8 @@
                         <p>{{ $message }}</p>
                     </div>
                 @endif
-                <form action="/admin/about/{{ $about->id }}" method="POST" enctype="multipart/form-data">
+                <form action="/admin/about/{{ $about->id }}" method="POST" enctype="multipart/form-data"
+                    @if(!$about->id) style="pointer-events:none;opacity:.6" @endif>
                     @method('PUT')
                     @csrf
                     <div class="form-group">
@@ -56,7 +57,9 @@
                     @error('kelebihan_3')
                         <small style="color:red">{{ $message }}</small>
                     @enderror
-                    <img src="/image/{{ $about->image }}" alt="" class="img-fluid">
+                    @if($about->image)
+                    <img src="/image/{{ $about->image }}" alt="" class="img-fluid mb-2">
+                    @endif
                     <div class="form-group">
                         <label for="">Gambar</label>
                         <input type="file" class="form-control" name="image">
@@ -66,7 +69,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                     </div>
 
                 </form>

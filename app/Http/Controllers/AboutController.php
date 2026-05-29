@@ -14,7 +14,13 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::first();
+        $about = About::firstOrCreate(['id' => 1], [
+            'judul' => '',
+            'subjudul' => '',
+            'kelebihan_1' => '',
+            'kelebihan_2' => '',
+            'kelebihan_3' => '',
+        ]);
 
         return view('about', compact('about'));
     }

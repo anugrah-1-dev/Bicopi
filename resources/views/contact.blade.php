@@ -40,6 +40,13 @@
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
+                    <label for="">Telepon 2</label>
+                    <input type="text" class="form-control" name="telepon_2" placeholder="Telepon" value="{{ $contact->telepon_2 }}">
+                </div>
+                @error('telepon_2')
+                <small style="color:red">{{$message}}</small>
+                @enderror
+                <div class="form-group">
                     <label for="">jambuka</label>
                     <input type="text" class="form-control" name="jam_buka" placeholder="Telepon" value="{{ $contact->jam_buka }}">
                 </div>

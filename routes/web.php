@@ -21,7 +21,7 @@ Route::post('/login', [AuthController::class, 'authenticated']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 // Dashboard
-Route::prefix('/admin')->group(function () {
+Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::resource('sliders', SliderController::class);
@@ -41,7 +41,3 @@ Route::prefix('/admin')->group(function () {
 
 });
 
-
-Route::get('/pesan', function () {
-    return view('pesan');
-});

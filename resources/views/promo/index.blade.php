@@ -46,7 +46,7 @@
                         <img src="/image/{{ $promo->image }}" alt="" class="img-fluid" width="90">
                     </td>
                     <td>
-                        <a href="{{ route('promosi.edit', $promo->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('promosi.edit', $promo->id) }}" class="btn btn-warning btn-sm">Ubah</a>
                         <form action="{{ route('promosi.destroy', $promo->id) }}" method="POST" style="display:inline-block;">
                             @csrf    
                             @method('DELETE')

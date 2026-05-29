@@ -45,10 +45,9 @@
         <div class="branding d-flex align-items-cente">
 
             <div class="container position-relative d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <!-- Uncomment the line below if you also wish to use an image logo -->
-                    <!-- <img src="assets/img/logo.png" alt=""> -->
-                    <h1 class="sitename">Bicopi</h1>
+                <a href="/" class="top-left-logo">
+                    <img src="{{ asset('assets/img/logo_bikopi.jpg') }}" alt="Bicopi Logo" class="img-fluid">
+
                 </a>
 
                 <nav id="navmenu" class="navmenu">
@@ -62,7 +61,6 @@
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
 
-                <a class="btn-book-a-table" href="https://order.bicopicoffe.com/shop">Pesan Sekarang</a>
 
             </div>
 
@@ -88,7 +86,6 @@
                             <p>{{ $slider->description }}</p>
                             <div>
                                 <a href="#menu" class="btn-get-started">Menu Kami</a>
-                                <a class="btn-get-started" href="#menu">Pesan Sekarang</a>
                             </div>
                         </div>
                     </div>
@@ -113,6 +110,7 @@
 
             <div class="container">
 
+                @if($about)
                 <div class="row gy-4">
                     <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                         <img src="{{ asset('image/' . $about->image) }}" class="img-fluid" alt="">
@@ -130,32 +128,34 @@
                         </ul>
                     </div>
                 </div>
+                @endif
 
             </div>
 
             <!-- Gallery Section -->
             <section id="gallery" class="gallery section">
 
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <div><span>Some photos from</span> <span class="description-title">Our Restaurant</span></div>
-    </div><div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-0">
-            @foreach ($portfolios as $image)
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="gallery-item">
-                        <a href="{{ asset('image/' . $image->image) }}" class="glightbox"
-                            data-gallery="images-gallery">
-                            <img src="{{ asset('image/' . $image->image) }}" alt=""
-                                class="img-fluid w-100 h-100 object-fit-cover">
-                        </a>
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Galeri</h2>
+                    <div><span>Beberapa foto dari</span> <span class="description-title">Restoran Kami</span></div>
+                </div>
+                <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row g-0">
+                        @foreach ($portfolios as $image)
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="gallery-item">
+                                    <a href="{{ asset('image/' . $image->image) }}" class="glightbox"
+                                        data-gallery="images-gallery">
+                                        <img src="{{ asset('image/' . $image->image) }}" alt=""
+                                            class="img-fluid w-100 h-100 object-fit-cover">
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-            @endforeach
-        </div>
-    </div>
 
-</section><!-- /Gallery Section -->
+            </section><!-- /Gallery Section -->
 
         </section><!-- /About Section -->
 
@@ -198,7 +198,7 @@
 
                         <div class="col-lg-6 menu-item isotope-item {{ $filterClass }}">
                             <div class="d-flex align-items-start">
-                                <img src="{{ $menu->foto_menu }}" class="menu-img" alt="{{ $menu->nama_menu }}">
+                                <img src="{{ asset('image/' . $menu->foto_menu) }}" class="menu-img" alt="{{ $menu->nama_menu }}">
 
                                 <div>
                                     <div class="menu-content d-flex justify-content-between">
@@ -223,8 +223,8 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Specials</h2>
-                <div><span>Check Our</span> <span class="description-title">Specials</span></div>
+                <h2>Spesial</h2>
+                <div><span>Lihat</span> <span class="description-title">Menu Spesial</span></div>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -303,10 +303,11 @@
                         @foreach ($promosi as $item)
                             <div class="swiper-slide">
                                 <div class="row gy-4 event-item">
-                                    <div class="col-lg-6">
-                                        <img src="{{ asset('image/' . $item->image) }}" class="img-fluid"
-                                            alt="">
-                                    </div>
+                                    <!-- ...existing code... -->
+<div class="col-lg-6">
+    <img src="{{ asset('image/' . $item->image) }}" class="img-fluid event-img-custom" alt="">
+</div>
+<!-- ...existing code... -->
                                     <div class="col-lg-6 pt-4 pt-lg-0 content">
                                         <h3>{{ $item->judul }}</h3>
                                         <p class="fst-italic">
@@ -324,7 +325,7 @@
                                             </li>
                                         </ul>
 
-                                        <a href="https://link-aplikasi.com" class="btn-book-a-table" target="_blank">
+                                        <a href="#" class="btn-book-a-table">
                                             Klik Jika Tertarik
                                         </a>
                                     </div>
@@ -351,86 +352,102 @@
     </main>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section" style="margin-bottom: 0; padding-bottom: 0;">
+    <section id="contact" class="contact section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Lokasi dan Kontak</h2>
-            <div><span>Lokasi Kami</span> <span class="description-title">Kami</span></div>
-        </div><!-- End Section Title -->
+            <div><span>Temukan</span> <span class="description-title">Kami</span></div>
+        </div>
 
-        <iframe src="{{ $contact->maps_embed }}" style="width: 100%; height: 400px; border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div class="container" data-aos="fade-up">
+            <div class="row gy-4 align-items-start">
 
-        <div class="container" data-aos="fade">
+                <!-- Peta -->
+                <div class="col-lg-5 col-md-12 d-flex justify-content-center justify-content-lg-start">
+                    @if($contact)
+                    <iframe
+                        src="{{ $contact->maps_embed }}"
+                        style="width: 420px; height: 420px; max-width: 100%; border: 0; border-radius: 12px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    @endif
+                </div>
 
-            <div class="row gy-5 gx-lg-5">
+                <!-- Info Kontak -->
+                <div class="col-lg-7 col-md-12">
+                    @if($contact)
+                    <div class="row gy-4">
+
+                        <div class="col-md-6 d-flex gap-3">
+                            <i class="bi bi-geo-alt-fill fs-4" style="color: var(--accent-color); flex-shrink: 0; margin-top: 2px;"></i>
+                            <div>
+                                <h5 class="fw-semibold mb-1">Alamat</h5>
+                                <p class="mb-0">{{ $contact->alamat }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex gap-3">
+                            <i class="bi bi-telephone-fill fs-4" style="color: var(--accent-color); flex-shrink: 0; margin-top: 2px;"></i>
+                            <div>
+                                <h5 class="fw-semibold mb-1">Kontak</h5>
+                                @if($contact->telepon)
+                                <p class="mb-0">{{ $contact->telepon }}</p>
+                                @endif
+                                @if($contact->telepon_2)
+                                <p class="mb-0">{{ $contact->telepon_2 }}</p>
+                                @endif
+                                @if($contact->email)
+                                <p class="mb-0">{{ $contact->email }}</p>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex gap-3">
+                            <i class="bi bi-clock-fill fs-4" style="color: var(--accent-color); flex-shrink: 0; margin-top: 2px;"></i>
+                            <div>
+                                <h5 class="fw-semibold mb-1">Jam Buka</h5>
+                                <p class="mb-0">{{ $contact->jam_buka ?: 'Senin - Minggu' }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex gap-3">
+                            <i class="bi bi-share-fill fs-4" style="color: var(--accent-color); flex-shrink: 0; margin-top: 2px;"></i>
+                            <div>
+                                <h5 class="fw-semibold mb-1">Ikuti Kami</h5>
+                                <div class="social-links d-flex gap-2 mt-1">
+                                    @if($contact->twitter)
+                                    <a href="{{ $contact->twitter }}" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                                    @endif
+                                    @if($contact->facebook)
+                                    <a href="{{ $contact->facebook }}" class="facebook"><i class="bi bi-facebook"></i></a>
+                                    @endif
+                                    @if($contact->instagram)
+                                    <a href="{{ $contact->instagram }}" class="instagram"><i class="bi bi-instagram"></i></a>
+                                    @endif
+                                    @if($contact->lynkin)
+                                    <a href="{{ $contact->lynkin }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    @endif
+                </div>
 
             </div>
-
         </div>
 
     </section><!-- /Contact Section -->
 
-    <footer id="footer" class="footer dark-background" style="margin-top: 0; padding-top: 0;">
-        r
-        <div class="container">
-            <div class="row gy-3">
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-geo-alt icon"></i>
-                    <div class="address">
-                        <h4>Alamat</h4>
-                        <p>{{ $contact->alamat }}</p>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-telephone icon"></i>
-                    <div>
-                        <h4>Kontak</h4>
-                        <p>
-                            <strong>Phone:</strong> <span>{{ $contact->telepon }}</span><br>
-                            <strong>Email:</strong> <span>{{ $contact->email }}</span><br>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-clock icon"></i>
-                    <div>
-                        <h4>Jam Buka</h4>
-                        <p>
-                            <strong>Senin-Minggu:</strong> <span>{{ $contact->jam_buka }}</span><br>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h4>Follow Us</h4>
-                    <div class="social-links d-flex">
-                        <a href="{{ $contact->twitter }}" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="{{ $contact->facebook }}" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="{{ $contact->instagram }}" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="{{ $contact->lynkin }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Bicopi</strong> <span>All Rights Reserved</span>
+    <footer id="footer" class="footer dark-background">
+        <div class="container copyright text-center py-4">
+            <p>© <span>Hak Cipta</span> <strong class="px-1 sitename">Bicopi</strong> <span>Semua Hak Dilindungi</span>
             </p>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            </div>
         </div>
-
     </footer>
 
     <!-- Scroll Top -->

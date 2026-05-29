@@ -33,7 +33,12 @@
                 @enderror
                 <div class="form-group">
                     <label for="">Kategori</label>
-                    <input type="text" class="form-control" name="kategori" placeholder="Nama Menu">
+                    <select name="kategori" class="form-control">
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="food">Makanan</option>
+                        <option value="drink">Minuman</option>
+                        <option value="snack">Snack</option>
+                    </select>
                 </div>
                 @error('kategori')
                 <small style="color:red">{{$message}}</small>
@@ -46,7 +51,7 @@
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                 </div>
             </form>
         </div>

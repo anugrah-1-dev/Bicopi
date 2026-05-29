@@ -33,11 +33,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $primaryKey = "id_user";
-    public $incrementing = false;
-    protected $keyType = 'uuid';
-    //true
-
     /**
      * The attributes that should be cast.
      *

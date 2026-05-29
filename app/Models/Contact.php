@@ -14,6 +14,7 @@ class Contact extends Model
         'alamat',
         'email',
         'telepon',
+        'telepon_2',
         'jam_buka',
         'maps_embed',
         'twitter',

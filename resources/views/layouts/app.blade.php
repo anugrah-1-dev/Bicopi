@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="/admin/dashboard" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
-                      Dashboard
+                      Dasbor
                     </p>
                 </a>
             </li> 
@@ -86,20 +86,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="/admin/sliders" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Sliders</p>
+                  <p>Data Slider</p>
                 </a>
               </li>
               
               <li class="nav-item">
                 <a href="/admin/portfolios" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Portfolios</p>
+                  <p>Data Portofolio</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/admin/specials" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Specials</p>
+                  <p>Data Spesial</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -136,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="/login" class="nav-link">
               <i class="nav-icon fas fa-arrow-left"></i>
               <p>
-                Logout
+                Keluar
               </p>
             </a>
           </li>
