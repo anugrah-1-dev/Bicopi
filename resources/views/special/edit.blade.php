@@ -12,23 +12,23 @@
             @method('PUT')
             @csrf
                 <div class="form-group">
-                    <label for="">Judul</label>
-                    <input type="judul" class="form-control" name="judul" placeholder="Judul" value="{{ $special->judul }}">
+                    <label for="judul">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="{{ $special->judul }}">
                 </div>
                 @error('judul')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Deskripsi</label>
-                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control" placeholder="Deskripsi">{{ $special->deskripsi }}</textarea>
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" class="form-control" placeholder="Deskripsi">{{ $special->deskripsi }}</textarea>
                 </div>
                 @error('deskripsi')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <img src="/image/{{ $special->image }}" alt="" class="img-fluid">
                 <div class="form-group">
-                    <label for="">Gambar</label>
-                    <input type="file" class="form-control" name="image">
+                    <label for="image">Gambar</label>
+                    <input type="file" class="form-control" id="image" name="image">
                 </div>
                 @error('image')
                 <small style="color:red">{{$message}}</small>

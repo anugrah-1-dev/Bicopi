@@ -18,40 +18,40 @@
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="">Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Judul"
+                        <label for="judul">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul"
                             value="{{ $about->judul }}">
                     </div>
                     @error('judul')
                         <small style="color:red">{{ $message }}</small>
                     @enderror
                     <div class="form-group">
-                        <label for="">Subjudul</label>
-                        <textarea name="subjudul" id="" cols="30" rows="5" class="form-control" placeholder="Subjudul">{{ $about->subjudul }}</textarea>
+                        <label for="subjudul">Subjudul</label>
+                        <textarea name="subjudul" id="subjudul" cols="30" rows="5" class="form-control" placeholder="Subjudul">{{ $about->subjudul }}</textarea>
                     </div>
                     @error('subjudul')
                         <small style="color:red">{{ $message }}</small>
                     @enderror
 
                     <div class="form-group">
-                        <label for="">Kelebihan 1</label>
-                        <input type="text" class="form-control" name="kelebihan_1" placeholder="Kelebihan 1"
+                        <label for="kelebihan_1">Kelebihan 1</label>
+                        <input type="text" class="form-control" id="kelebihan_1" name="kelebihan_1" placeholder="Kelebihan 1"
                             value="{{ $about->kelebihan_1 }}">
                     </div>
                     @error('kelebihan_1')
                         <small style="color:red">{{ $message }}</small>
                     @enderror
                     <div class="form-group">
-                        <label for="">Kelebihan 2</label>
-                        <input type="text" class="form-control" name="kelebihan_2" placeholder="Kelebihan 2"
+                        <label for="kelebihan_2">Kelebihan 2</label>
+                        <input type="text" class="form-control" id="kelebihan_2" name="kelebihan_2" placeholder="Kelebihan 2"
                             value="{{ $about->kelebihan_2 }}">
                     </div>
                     @error('kelebihan_2')
                         <small style="color:red">{{ $message }}</small>
                     @enderror
                     <div class="form-group">
-                        <label for="">Kelebihan 3</label>
-                        <input type="text" class="form-control" name="kelebihan_3" placeholder="Kelebihan 3"
+                        <label for="kelebihan_3">Kelebihan 3</label>
+                        <input type="text" class="form-control" id="kelebihan_3" name="kelebihan_3" placeholder="Kelebihan 3"
                             value="{{ $about->kelebihan_3 }}">
                     </div>
                     @error('kelebihan_3')
@@ -61,8 +61,8 @@
                     <img src="/image/{{ $about->image }}" alt="" class="img-fluid mb-2">
                     @endif
                     <div class="form-group">
-                        <label for="">Gambar</label>
-                        <input type="file" class="form-control" name="image">
+                        <label for="image">Gambar</label>
+                        <input type="file" class="form-control" id="image" name="image">
                     </div>
                     @error('image')
                         <small style="color:red">{{ $message }}</small>

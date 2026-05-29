@@ -19,71 +19,71 @@
                 
                 
                 <div class="form-group">
-                    <label for="">Alamat</label>
-                    <input type="text" class="form-control" name="alamat" placeholder="Alamat" value="{{ $contact->alamat }}">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="{{ $contact->alamat }}">
                 </div>
                 @error('alamat')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Email" value="{{ $contact->email }}">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="{{ $contact->email }}">
                 </div>
                 @error('email')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Telepon</label>
-                    <input type="text" class="form-control" name="telepon" placeholder="Telepon" value="{{ $contact->telepon }}">
+                    <label for="telepon">Telepon</label>
+                    <input type="text" class="form-control" id="telepon" name="telepon" placeholder="Telepon" value="{{ $contact->telepon }}">
                 </div>
                 @error('telepon')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Telepon 2</label>
-                    <input type="text" class="form-control" name="telepon_2" placeholder="Telepon" value="{{ $contact->telepon_2 }}">
+                    <label for="telepon_2">Telepon 2</label>
+                    <input type="text" class="form-control" id="telepon_2" name="telepon_2" placeholder="Telepon" value="{{ $contact->telepon_2 }}">
                 </div>
                 @error('telepon_2')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">jambuka</label>
-                    <input type="text" class="form-control" name="jam_buka" placeholder="Telepon" value="{{ $contact->jam_buka }}">
+                    <label for="jam_buka">Jam Buka</label>
+                    <input type="text" class="form-control" id="jam_buka" name="jam_buka" placeholder="Jam Buka" value="{{ $contact->jam_buka }}">
                 </div>
                 @error('jam_buka')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Maps Embed</label>
-                    <textarea name="maps_embed" id="" cols="30" rows="10" class="form-control" placeholder="Maps Embed">{{ $contact->maps_embed }}</textarea>
+                    <label for="maps_embed">Maps Embed</label>
+                    <textarea name="maps_embed" id="maps_embed" cols="30" rows="10" class="form-control" placeholder="Maps Embed">{{ $contact->maps_embed }}</textarea>
                 </div>
                 @error('maps_embed')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">twitter</label>
-                    <input type="text" class="form-control" name="twitter" placeholder="Telepon" value="{{ $contact->twitter }}">
+                    <label for="twitter">Twitter</label>
+                    <input type="text" class="form-control" id="twitter" name="twitter" placeholder="Twitter" value="{{ $contact->twitter }}">
                 </div>
                 @error('twitter')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">facebook</label>
-                    <input type="text" class="form-control" name="facebook" placeholder="Telepon" value="{{ $contact->facebook }}">
+                    <label for="facebook">Facebook</label>
+                    <input type="text" class="form-control" id="facebook" name="facebook" placeholder="Facebook" value="{{ $contact->facebook }}">
                 </div>
                 @error('facebook')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">instagram</label>
-                    <input type="text" class="form-control" name="instagram" placeholder="Telepon" value="{{ $contact->instagram }}">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" class="form-control" id="instagram" name="instagram" placeholder="Instagram" value="{{ $contact->instagram }}">
                 </div>
                 @error('instagram')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">lynkin</label>
-                    <input type="text" class="form-control" name="lynkin" placeholder="Telepon" value="{{ $contact->lynkin }}">
+                    <label for="lynkin">LinkedIn</label>
+                    <input type="text" class="form-control" id="lynkin" name="lynkin" placeholder="LinkedIn" value="{{ $contact->lynkin }}">
                 </div>
                 @error('lynkin')
                 <small style="color:red">{{$message}}</small>
