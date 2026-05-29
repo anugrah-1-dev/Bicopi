@@ -13,7 +13,12 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contact = Contact::firstOrCreate([]);
+        $contact = Contact::firstOrCreate(
+            ['id' => 1],
+            [
+                'maps_embed' => 'https://maps.google.com/maps?q=-7.3416796,112.7856501&z=17&output=embed',
+            ]
+        );
         return view('contact', compact('contact'));
     }
 
